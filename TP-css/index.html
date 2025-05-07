@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonSite Éducatif</title>
+    <link rel="stylesheet" href="res/css/style.css">
+    <link rel="icon" href="res/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="res/me.png" alt="Logo Éducation" class="logo-img">
+            <h1 class="logo-text">MonSiteÉducatif</h1>
+        </div>
+        <nav class="nav">
+            <a href="#">Accueil</a>
+            <a href="#">Cours</a>
+            <a href="#">Notes</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="intro-section">
+            <h2>Bienvenue</h2>
+            <p>Explorez nos ressources pédagogiques pour booster votre apprentissage.</p>
+        </section>
+
+        <div class="grid-container">
+            <div class="course-card" onclick="showCourse('Programmation Web')">
+                <h3>Cours 1</h3>
+                <p class="course-desc">Programmation Web</p>
+                <div class="grade-display" style="display:none;">
+                    <p>Note: <span class="grade">15.5/20</span></p>
+                </div>
+            </div>
+            <div class="course-card" onclick="showCourse('Base de Données')">
+                <h3>Cours 2</h3>
+                <p class="course-desc">Base de Données</p>
+                <div class="grade-display" style="display:none;">
+                    <p>Note: <span class="grade">12.75/20</span></p>
+                </div>
+            </div>
+            <div class="course-card" onclick="showCourse('Algorithmique')">
+                <h3>Cours 3</h3>
+                <p class="course-desc">Algorithmique</p>
+                <div class="grade-display" style="display:none;">
+                    <p>Note: <span class="grade">18.25/20</span></p>
+                </div>
+            </div>
+            <div class="course-card" onclick="showCourse('Réseaux')">
+                <h3>Cours 4</h3>
+                <p class="course-desc">Réseaux</p>
+                <div class="grade-display" style="display:none;">
+                    <p>Note: <span class="grade">14.0/20</span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 MonSite Éducatif. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function showCourse(courseName) {
+            const card = event.currentTarget;
+            const gradeDisplay = card.querySelector('.grade-display');
+            
+            gradeDisplay.style.display = gradeDisplay.style.display === 'none' ? 'block' : 'none';
+            
+            // Animation supplémentaire
+            card.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                card.style.transform = 'scale(1)';
+            }, 200);
+        }
+    </script>
+</body>
+</html>
